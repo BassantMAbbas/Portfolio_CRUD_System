@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD System</title>
+    <link rel="stylesheet" href="Css/all.min.css">
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+    <section>
+        <div class="container mt-5 p-5 bg-dark-subtle rounded-3">
+            <h1 class="text-center text-black-50">CRUD SYSTEM</h1>
+            <div id="containerName">
+                <label for="productName">Product Name</label>
+                <input 
+                type="text"
+                class="form-control"
+                placeholder="Enter Product Name"
+                id="productName"
+                oninput="validateName()"
+                >
+                <div class="alert alert-danger mt-2 d-none" id="nameAlert">Please insert name correctly, first letter must be capital</div>
+            </div>
+            <div id="containerPrice">
+                <label for="productPrice">Product Price</label>
+                <input 
+                type="text"
+                class="form-control"
+                placeholder="Enter Product Price"
+                id="productPrice"
+                oninput="validatePrice()"
+                >
+                <div class="alert alert-danger mt-2 d-none" id="priceAlert">Please insert price correctly</div>
+            </div>   
+            <div id="containerType">
+                <label for="productType">Product Type</label>
+                <input 
+                type="text"
+                class="form-control"
+                placeholder="Enter Product Type"
+                id="productType"
+                oninput="validateType()"
+                >
+                <div class="alert alert-danger mt-2 d-none" id="typeAlert">Please insert type correctly, first letter must be capital</div>
+            </div>
+            <div id="containerDescription">
+                <label for="productDescription">Product Description</label>
+                <input 
+                type="text"
+                class="form-control"
+                placeholder="Enter Product Description"
+                id="productDescription"
+                oninput="validateDescription()"
+                >
+                <div class="alert alert-danger mt-2 d-none" id="descriptionAlert">Please insert description</div>
+            </div>
+            <div id="containerImage">
+                <label for="productImage">Product Image</label>
+                <input 
+                type="file"
+                class="form-control"
+                placeholder="Enter Product Image"
+                id="productImage"
+                accept="image/"
+                >
+                <!-- <div class="alert alert-danger mt-2 d-none" id="imageError">Please insert image</div> -->
+            </div>
+            <div id="containerButtons" class="mt-3 text-center">
+                <button id="addButton" class="btn btn-dark w-50 rounded-pill" onclick="addProduct()">Add Product</button>
+                <button id="updateButton" class="btn btn-dark w-50 rounded-pill d-none"
+                onclick="updateProduct()">Update Product</button>
+                <input 
+                oninput="searchProduct()"
+                type="search"
+                class="form-control w-50 mt-3 text-center my-3 d-inline-block"
+                placeholder="Search Product"
+                id="searchId"
+                >
+            </div>
+            <table class="table table-info">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
